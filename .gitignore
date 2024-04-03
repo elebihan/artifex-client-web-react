@@ -1,2 +1,5 @@
 node_modules/
 dist/
+crates/batch-exec/Cargo.lock
+!/crates/batch-exec/pkg/.gitkeep
+crates/batch-exec/target/

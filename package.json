@@ -4,8 +4,9 @@
   "version": "0.1.1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "yarn build-wasm && vite",
+    "build": "yarn build-wasm && vite build",
+    "build-wasm": "wasm-pack build ./crates/batch-exec --target web",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prepare": "husky install"
@@ -14,20 +15,23 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.8",
-    "@mui/icons-material": "^5.15.6",
-    "@mui/material": "^5.15.6",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
+    "@mui/styles": "^5.15.15",
     "@protobuf-ts/grpcweb-transport": "^2.9.3",
     "@protobuf-ts/plugin": "^2.9.3",
     "@types/react-router-dom": "^5.3.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.3"
+    "mui-file-input": "^4.0.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.21.3",
+    "batch-exec": "link:./crates/batch-exec/pkg"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.56.0",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -36,9 +40,11 @@
     "lint-staged": "^15.2.0",
     "prettier": "3.2.4",
     "typescript": "^5.3.3",
-    "vite": "^5.0.8",
+    "vite": "^5.2.8",
     "vite-plugin-eslint": "^1.8.1",
-    "vite-plugin-tsconfig-paths": "^1.4.1"
+    "vite-plugin-tsconfig-paths": "^1.4.1",
+    "vite-plugin-wasm": "^3.3.0",
+    "wasm-pack": "^0.12.1"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"

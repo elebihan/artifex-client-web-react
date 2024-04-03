@@ -28,6 +28,7 @@
         ]
     },
     "ignorePatterns": [
+      "crates/batch-exec/pkg",
       "src/services/artifex.ts",
       "src/services/artifex.client.ts"
     ]

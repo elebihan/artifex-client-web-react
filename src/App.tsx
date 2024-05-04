@@ -11,6 +11,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import ApplicationBar from "components/ApplicationBar";
 import Sidebar from "components/Sidebar";
+import BatchPage from "pages/BatchPage";
 import SystemInspectPage from "pages/SystemInspectPage";
 import SystemExecutePage from "pages/SystemExecutePage";
 import SystemUpgradePage from "pages/SystemUpgradePage";
@@ -34,6 +35,11 @@ const Root: React.FC = () => {
                 { label: "Execute", link: "/system/execute", items: [] },
                 { label: "Upgrade", link: "/system/upgrade", items: [] },
               ],
+            },
+            {
+              label: "Batch",
+              link: "/batch",
+              items: [],
             },
           ]}
         />
@@ -67,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: "system/upgrade",
         element: <SystemUpgradePage />,
+      },
+      {
+        path: "batch",
+        element: <BatchPage />,
       },
     ],
   },

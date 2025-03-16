@@ -1,3 +1,4 @@
+.yarn
 node_modules/
 dist/
 crates/batch-exec/Cargo.lock

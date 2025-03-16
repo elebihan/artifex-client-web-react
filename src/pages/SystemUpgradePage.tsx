@@ -40,7 +40,7 @@ const SystemUpgradePage = () => {
     } finally {
       setIsUpgrading(false);
     }
-  }, []);
+  }, [client]);
   const handleErrorDialogClosed = () => {
     setOpenErrorDialog(false);
   };

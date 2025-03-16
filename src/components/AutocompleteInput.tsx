@@ -37,7 +37,7 @@ export const AutocompleteInput = forwardRef(
       const storedValues =
         JSON.parse(localStorage.getItem(storageKey) || "[]") || [];
       setPreviousValues(storedValues);
-    }, []);
+    }, [storageKey]);
 
     const storeValues = () => {
       const currentValue = inputValue!;
@@ -72,3 +72,5 @@ export const AutocompleteInput = forwardRef(
     );
   },
 );
+
+AutocompleteInput.displayName = "AutocompleteInput";

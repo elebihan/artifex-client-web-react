@@ -29,8 +29,8 @@ impl From<Error> for JsValue {
 pub async fn execute_batch(url: &str, text: &str) -> Result<String, Error> {
     let batch = Batch::from_reader(text.as_bytes())?;
     let client = Client::new(url.to_string());
-    let client = ArtifexClient::new(client);
-    let mut runner = BatchRunner::new(client);
+    let mut client = ArtifexClient::new(client);
+    let mut runner = BatchRunner::new(&mut client);
     let report = runner.run(&batch).await?;
     let mut buffer = Vec::new();
     let renderer = MarkupReportRenderer::new(MarkupKind::Yaml);
